@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lightbox Code | blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <header>
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="https://blog.heavenlee.io">/home/heaven lee</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">Lightbox Code</span></h1>
+
+<h2 class="date">2017/07/19</h2>
+<p class="terms">
+  
+  
+  
+  
+  
+</p>
+</div>
+
+
+
+<main>
+
+
+<p>Credit goes to Team Treehouse for the course to create a lightbox using Jquery. This code will be used as a reference.</p>
+
+<h3 id="jquery">Jquery</h3>
+
+<pre><code>//Problem: User when clicking on image goes to a dead end
+//Solution: Create an overlay with the large image - Lightbox
+
+var $overlay = $('&lt;div id=&quot;overlay&quot;&gt;&lt;/div&gt;');
+var $image = $(&quot;&lt;img&gt;&quot;);
+var $caption = $(&quot;&lt;p&gt;&lt;/p&gt;&quot;);
+
+  // An image to overlay
+$overlay.append($image);
+ // A caption to overlay
+$overlay.append($caption);
+// Add overlay
+$(&quot;body&quot;).append($overlay);
+
+
+
+//1. Capture the click event on a link to an image
+$(&quot;#image-gallery a&quot;).click(function(event) {
+  event.preventDefault();
+  var imageLocation = $(this).attr(&quot;href&quot;);
+    // Update overlay with the image linked in the link.
+  $image.attr(&quot;src&quot;, imageLocation);
+  
+  // Show the overlay.
+  $overlay.show();
+
+  // Get childs alt altribute and set caption.
+  var captionText = $(this).children(&quot;img&quot;).attr(&quot;alt&quot;);
+  $caption.text(captionText);
+  
+});
+
+
+
+// When overlay is clicked
+$overlay.click(function(){
+   // Hide the overlay
+  $overlay.hide();
+});
+
+</code></pre>
+
+<h3 id="html">HTML</h3>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; title=&quot;no title&quot; charset=&quot;utf-8&quot;&gt;
+	&lt;title&gt;Image Gallery&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1&gt;Image Gallery&lt;/h1&gt;
+	&lt;ul id=&quot;image-gallery&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;images/refferal_machine.png&quot;&gt;&lt;img src=&quot;images/refferal_machine.png&quot; width=&quot;100&quot; alt=&quot;Refferal Machine By Matthew Spiel&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/space-juice.png&quot;&gt;&lt;img src=&quot;images/space-juice.png&quot; width=&quot;100&quot; alt=&quot;Space Juice by Mat Helme&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/education.png&quot;&gt;&lt;img src=&quot;images/education.png&quot; width=&quot;100&quot; alt=&quot;Education by Chris Michel&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/copy_mcrepeatsalot.png&quot;&gt;&lt;img src=&quot;images/copy_mcrepeatsalot.png&quot; width=&quot;100&quot; alt=&quot;Wanted: Copy McRepeatsalot by Chris Michel&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/sebastian.png&quot;&gt;&lt;img src=&quot;images/sebastian.png&quot; width=&quot;100&quot; alt=&quot;Sebastian by Mat Helme&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/skill-polish.png&quot;&gt;&lt;img src=&quot;images/skill-polish.png&quot; width=&quot;100&quot; alt=&quot;Skill Polish by Chris Michel&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/chuck.png&quot;&gt;&lt;img src=&quot;images/chuck.png&quot; width=&quot;100&quot; alt=&quot;Chuck by Mat Helme&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/library.png&quot;&gt;&lt;img src=&quot;images/library.png&quot; width=&quot;100&quot; alt=&quot;Library by Tyson Rosage&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/boat.png&quot;&gt;&lt;img src=&quot;images/boat.png&quot; width=&quot;100&quot; alt=&quot;Boat by Griffin Moore&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/illustrator_foundations.png&quot;&gt;&lt;img src=&quot;images/illustrator_foundations.png&quot; width=&quot;100&quot; alt=&quot;Illustrator Foundations by Matthew Spiel&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;images/treehouse_shop.jpg&quot;&gt;&lt;img src=&quot;images/treehouse_shop.jpg&quot; width=&quot;100&quot; alt=&quot;Treehouse Shop by Eric Smith&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;script src=&quot;http://code.jquery.com/jquery-1.11.0.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;js/app.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+}
+</code></pre>
+
+<h3 id="css">CSS</h3>
+
+<pre><code class="language-css">body {
+	font-family: sans-serif;
+	background: #384047;
+}
+h1 {
+	color: #fff;
+	text-align: center
+}
+
+ul {
+	list-style:none;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+	max-width: 780px;
+	text-align: center;
+}
+ul li {
+	display: inline-block;
+	padding: 8px;
+	background:white;
+	margin:10px;
+}
+ul li img {
+	display: block;
+}
+a {
+	text-decoration: none;
+}
+
+#overlay {
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align:center;
+}
+
+#overlay img {
+  margin-top: 10%;
+}
+
+#overlay p {
+  color: #fff;
+}
+</code></pre>
+
+</main>
+
+    <footer>
+      
+<script async src="//yihui.name/js/center-img.js"></script>
+
+      
+    </footer>
+  </body>
+</html>
+

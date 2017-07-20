@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bird Generator | blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <header>
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="https://blog.heavenlee.io">/home/heaven lee</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">Bird Generator</span></h1>
+
+<h2 class="date">2017/07/19</h2>
+<p class="terms">
+  
+  
+  
+  
+  
+</p>
+</div>
+
+
+
+<main>
+<p>Working with javascript loops and functions. <a href="http://heal33.github.io/bird-generator">Check it out here!</a></p>
+
+<p>View the code live on <a href="http://codepen.io/heal33/pen/MaRwMV">codepen</a>.</p>
+
+<p>Had to troubleshoot for 3 hours because the birds were not being reset each time the button was clicked.</p>
+
+<p>After many hours of researching and trial and error, all I had to do was add <span style="background-color: yellow">html = &ldquo;&rdquo;</span> at the end of the function to clear all birds images written to the html variable.</p>
+
+<pre><code>function myFunction() {
+  var num = Math.floor(Math.random() * 1000) + 1;
+  for (var i = 1; i &lt;= num; i += 1) {
+    html += &quot;&lt;img src='http://www.goldencob.com.au/media/2566/lovebird.png'&gt;&quot;;
+  }
+  print(html);
+  document.getElementById('birds-generated').innerHTML = num;
+  //readys html to be cleared
+  html = &quot;&quot;; 
+}
+</code></pre>
+
+</main>
+
+    <footer>
+      
+<script async src="//yihui.name/js/center-img.js"></script>
+
+      
+    </footer>
+  </body>
+</html>
+
