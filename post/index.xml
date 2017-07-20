@@ -37,10 +37,11 @@ Jquery //Problem: User when clicking on image goes to a dead end //Solution: Cre
       <pubDate>Fri, 20 Nov 2015 22:02:49 -1000</pubDate>
       
       <guid>https://blog.heavenlee.io/post/bird-generator/</guid>
-      <description>Working with javascript loops and functions. Check it out here!
+      <description>Working with javascript loops and functions.
 View the code live on codepen.
 Had to troubleshoot for 3 hours because the birds were not being reset each time the button was clicked.
-After many hours of researching and trial and error, all I had to do was add html = &amp;ldquo;&amp;rdquo; at the end of the function to clear all birds images written to the html variable.</description>
+After many hours of researching and trial and error, all I had to do was add html = &amp;ldquo;&amp;rdquo; at the end of the function to clear all birds images written to the html variable.
+function myFunction() { var num = Math.</description>
     </item>
     
     <item>
