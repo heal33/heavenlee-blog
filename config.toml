@@ -1,3 +1,32 @@
-baseURL = "http://example.org/"
+baseURL = "https://blog.heavenlee.io"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Heaven Lee"
+theme = "temple"
+# If not set, it will not appear. Otherwise it will show below your footer links
+# copyright = "(c) 2008 - 2014"
+
+[Params]
+  # Enables syntax highlighting
+  highlight = true 
+
+  # Supports highlighting for languages not included in the original pack
+  # See https://highlightjs.org/download/ for what's included in original pack
+  # For reference to all languages, see:
+  # https://github.com/isagalaev/highlight.js/tree/master/src/languages
+  hjslangs = ["go", "vim", "javascript", "php"]
+
+  # Enables the topmenu, which pulls from categories
+  topmenu = "categories"
+
+# Builds a list page for each category given
+[Taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[Author]
+  name = "Heaven"
+  github = "heal33"
+  email = ""
+  gaid = ""
+  twitter = "heal33"
+  medium = ""
