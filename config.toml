@@ -1,4 +1,4 @@
-baseURL = "https://blog.heavenlee.io"
+baseURL = "https://blog.heavenlee.io/"
 languageCode = "en-us"
 title = "Heaven Lee"
 theme = "temple"
